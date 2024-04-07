@@ -37,7 +37,7 @@ aside{
     .sidebar{
         width: 200px;
         height: 100%;
-        background-color: #1f1f1f;
+        background-color: #39414f;
         border-radius: 20px;
         padding: 0px 12px;
         color: var(--text-color);
@@ -172,7 +172,7 @@ aside{
                         top: 50%;
                         left: 100%;
                         translate: 28px -50%;
-                        background-color: rgb(196, 196, 196);
+                        background-color: var(--second-color);
                         padding: 3px 5px;
                         border-radius: 4px;
                         white-space: nowrap;
@@ -182,12 +182,13 @@ aside{
                     }
                     &::after{
                         content: "";
-                        border: 4px solid;
-                        border-right-color: rgb(196, 196, 196);
+                        border: 6px solid;
+                        border-color: var(--bg-color);
+                        border-right-color: var(--second-color);
                         position: absolute;
                         top: 50%;
                         left: 100%;
-                        translate: 20px -50%;
+                        translate: 17px -50%;
                         opacity: 0;
                         visibility: hidden;
                         transition: 300ms opacity, 300ms visibility;
@@ -250,27 +251,29 @@ aside{
 /* Home */
 .home{
     display: flex;
-    margin-left: 230px;
+    margin-left: 205px;
     justify-content: center;
     align-items: center;
+    background-color: var(--bg-color);
 }
 
 .home-img{
     position: relative;
+    z-index: 99;
     img{
-
         width: 30vw;
     }
-    .home-img-clip{
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: var(--main-color);
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-    }
+    
+}
+.home-imgCSlip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+    width: 30vw;
+    height: 100%;
+    z-index: -1;
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
 }
 
 
@@ -294,19 +297,73 @@ aside{
 
 }
 .social-link{
+    
   a{    
     margin: 2rem 1.5rem;
     color: var(--main-color);
-    font-size: 4rem;
+    font-size: 4rem;    
+    line-height: 2rem;
+    display: inline-block;
+    .relative{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;        
+        text-align: center;
+        border-radius: 5px;
+        
+        .text{
+            display: block;
+            position: relative;
+            color: var(--bg-color);
+            font-size: 2rem;
+            margin-top: 1.5rem;           
+            
+            
+        }
+        
+    }
     
     &:where(:hover , .active){
-        background-color: var(--main-color);
-        color: var(--bg-color);
-        background-clip: text;
-        text-shadow: 0 0 1rem var(--main-color);
-        transition: 400ms all linear;
+        i{
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            background-clip: text;
+            text-shadow: 0 0 1rem var(--main-color);
+            transition: 400ms all linear;
+        }
+        .text::before{
+            content: attr(title);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            color: cadetblue;
+            border-right: 2px solid cadetblue;
+            overflow: hidden;
+            animation: span 4s linear backwards ;
+            
+        }
+        @keyframes span {
+            0%,10%,100%{
+                width: 0;
+                
+            }
+            70%,90%{
+                width: 100%;
+                
+            } 
+        }
+        
+        
     }
+    
+    
+    
+    
   }
+  
   
 }
 .home-span{
@@ -346,4 +403,124 @@ aside{
     50%{width: 0;}
     75%{width: 100%;}
     100%{width: 0;}
+}
+
+
+/* About */
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background-color: var(--second-color);
+    margin-left: 205px;
+    color: var(--text-color);
+    .about-img img{
+        width: 30vw;
+        background-color: var(--main-color);
+        border: 3px solid var(--text-color);
+        filter: drop-shadow(0 0 3rem var(--main-color));
+        border-radius: 30% 70% 53% 47% / 26% 46% 54% 74% ;
+        animation: anime 30s infinite;
+        
+    }
+}
+
+.heading{
+    font-size: 2.5rem ;
+    text-align: left;
+    
+    .heading-span{
+        color: var(--main-color);
+    }
+}
+.about-content h3{
+    font-size: 1.5rem;
+}
+.about-content p{
+    font-size: 1rem;
+    margin:2rem 0 3.2rem;
+}
+.about-content p span{
+    
+    color: transparent;
+    background-image:linear-gradient(
+        to right,
+        var(--text-color),var(--text-color)
+    );
+    background-repeat: no-repeat;
+    background-clip: text;
+    background-size: 0% 100%;
+    animation: text-animation 4s linear forwards;
+    animation-timeline: view();
+    animation-range: contain;
+    animation-range-start: 13vh;
+    animation-range-end:  50vh;
+}
+.about-button{
+    color: var(--second-color);
+    background-color: var(--main-color);
+    padding: 0.7rem 2rem;
+    border-radius: 4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    filter: drop-shadow(0 0 2rem var(--main-color));
+    transition: 0.3s linear;
+
+    &:where(:hover , .active){
+        color: var(--text-color);
+        filter: none;
+    }
+}
+@keyframes anime {
+    0%,
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
+  }
+
+  10% {
+    border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+  }
+
+  20% {
+    border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
+  }
+
+  30% {
+    border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
+  }
+
+  40% {
+    border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
+  }
+
+  50% {
+    border-radius: 100%;
+  }
+
+  60% {
+    border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
+  }
+
+  70% {
+    border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
+  }
+
+  80% {
+    border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
+  }
+
+  90% {
+    border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
+  }
+}
+
+@keyframes text-animation {
+    0%{
+        background-size: 0% 100%;
+    }
+    100%{
+        background-size: 100% 100%;
+    }
 }
