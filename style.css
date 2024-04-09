@@ -437,7 +437,7 @@ aside{
         border: 3px solid var(--text-color);
         filter: drop-shadow(0 0 3rem var(--main-color));
         border-radius: 30% 70% 53% 47% / 26% 46% 54% 74% ;
-        animation: anime 30s infinite;
+        animation: anime 20s infinite;
         
     }
 }
@@ -570,6 +570,8 @@ aside{
             transition: 300ms linear;
             border: 1px solid transparent;
             position: relative;
+            
+            
             .after{
                 content: "";
                 position: absolute;
@@ -617,21 +619,86 @@ aside{
             &:where(:hover,:active){
                 transform: scale(1.05);
                 /* border: 3px solid var(--main-color); */
-                a{
-                    filter: drop-shadow(0 0 2rem var(--main-color));
-                    color: var(--text-color);
-                }
                 .after{
                     height: 105%;
                     width: 105%;
                     filter: drop-shadow(0 0 0.5rem rgb(177, 121, 241))
                     
                 }
+                a{
+                    filter: drop-shadow(0 0 2rem var(--main-color));
+                    color: var(--text-color);
+                }
+                
                 
 
             }
         
         }
+        .services-box1{
+            width: 310px;
+            height: 310px;
+            background-color: var(--second-color);
+            position: relative;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            cursor: pointer;
+            overflow: hidden;
+            padding:1rem 1rem ;
+            transition: all 0.2s linear;
+
+            i{
+                font-size: 5rem;
+                color: var(--main-color);
+                z-index: 1;
+                
+            }
+            a{
+                padding: 0.7rem 2rem;
+                background-color: var(--main-color);
+                border-radius: 4rem;
+                font-size: 1rem;
+                font-weight: 600;
+                color: var(--bg-color);
+                letter-spacing: 0.1rem;
+                transition: 300ms linear;
+                z-index: 1;
+            }
+            p{
+                margin-bottom: 3rem;
+                font-size: 1rem;
+                z-index: 1;
+            }
+            h3{
+                font-size: 1.3rem;
+                margin-bottom: 2.5rem;
+                z-index: 1;
+            }
+        }
+        .services-box1::before{
+            position: absolute;
+            content: "";
+            width: 50%;
+            height: 180%;
+            background-color: rgb(177, 121, 241);
+            transform: rotate(45deg);
+        }
+        .services-box1:hover:before{
+            animation: animate 2s linear infinite;
+            
+        }
+        .services-box1::after{
+            position: absolute;
+            content: "";
+            inset: 10px;
+            background:var(--second-color) ;
+            border-radius: 8px;            
+        }
+        .services-box1:hover{
+            transform: scale(1.05);
+        }
+
         
         
 
@@ -639,6 +706,17 @@ aside{
     
 
 }
+@keyframes animate {
+    from{
+        transform:rotate(0deg);
+        
+    }
+    to{
+        transform:rotate(-360deg);
+        filter: hue-rotate(-360deg) saturate(1000%);
+    }
+}
+
 
 
 /* Portfolio */
