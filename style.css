@@ -576,14 +576,17 @@ aside{
                 background-color: transparent;
                 border: 1rem solid rgb(177, 121, 241);
                 border-radius: 3.2rem;
-                width: 105%;
+                width: 0%;
                 height: 0%;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
                 transition: all 0.2s linear;
                 z-index: -1;
+                
             }
+            
+            
             i{
                 font-size: 5rem;
                 color: var(--main-color);
@@ -620,8 +623,11 @@ aside{
                 }
                 .after{
                     height: 105%;
+                    width: 105%;
                     filter: drop-shadow(0 0 0.5rem rgb(177, 121, 241))
+                    
                 }
+                
 
             }
         
@@ -630,8 +636,10 @@ aside{
         
 
     }
+    
 
 }
+
 
 /* Portfolio */
 .portfolio{
