@@ -697,6 +697,10 @@ aside{
         }
         .services-box1:hover{
             transform: scale(1.05);
+            a{
+                    filter: drop-shadow(0 0 2rem var(--main-color));
+                    color: var(--text-color);
+                }
         }
 
         
