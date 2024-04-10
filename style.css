@@ -636,13 +636,16 @@ aside{
         
         }
         .services-box1{
-            width: 310px;
-            height: 310px;
+            width: 312px;
+            height: 320px;
             background-color: var(--second-color);
             position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             display: grid;
             place-items: center;
-            border-radius: 12px;
+            border-radius: 20px;
             cursor: pointer;
             overflow: hidden;
             padding:1rem 1rem ;
@@ -691,16 +694,16 @@ aside{
         .services-box1::after{
             position: absolute;
             content: "";
-            inset: 10px;
+            inset: 6px;
             background:var(--second-color) ;
             border-radius: 8px;            
         }
         .services-box1:hover{
             transform: scale(1.05);
             a{
-                    filter: drop-shadow(0 0 2rem var(--main-color));
-                    color: var(--text-color);
-                }
+               filter: drop-shadow(0 0 2rem var(--main-color));
+               color: var(--text-color);
+            }
         }
 
         
