@@ -370,7 +370,7 @@ aside{
             transition: 400ms all linear;
             
         }
-        .text:hover::before{
+            .text:hover::before, i:hover ~ .text:before{
             width: 100%;
         }
         
@@ -636,8 +636,7 @@ aside{
         
         }
         .services-box1{
-            width: 330px;
-            height: 305px;
+            flex: 1 1 22rem;
             background-color: var(--second-color);
             position: relative;
             align-items: center;
@@ -782,6 +781,8 @@ aside{
                     }
                 }
             }
+            
+            /* düzenle */
             .effect{
                 transform: translateY(100%);
                 transition: 0.5s linear;
@@ -790,48 +791,30 @@ aside{
                 width: 100%;
                 object-fit: cover;
                 transition: 0.5s linear;
+                aspect-ratio: 16 / 10;
             }
             .effect-2{
                 transform: translateX(-100%);
                 transition: 0.5s linear;
             }
-            .img-2{
-                width: 100%;
-                object-fit: cover;
-                transition: 0.5s linear;
-            }
+            
             .effect-3{
                 transform: translateY(-100%);
                 transition: 0.5s linear;
-            }.img-3{
-                width: 100%;
-                object-fit: cover;
-                transition: 0.5s linear;
             }
+            
             .effect-4{
                 transform: translateX(100%);
                 transition: 0.5s linear;
-            }.img-4{
-                width: 100%;
-                object-fit: cover;
-                transition: 0.5s linear;
             }
             .effect-5{
-                transform: translateX(100%);
-                transform: translateY(-100%);
-                transition: 0.5s linear;
-            }.img-5{
-                width: 100%;
-                object-fit: cover;
+                transform: translate(100%,-100%);
+                /* transform: translateY(-100%); */
                 transition: 0.5s linear;
             }
             .effect-6{
                 transform: translateX(100%);
                 
-                transition: 0.5s linear;
-            }.img-6{
-                width: 100%;
-                object-fit: cover;
                 transition: 0.5s linear;
             }
             
@@ -867,7 +850,7 @@ aside{
                     transform: translateY(0%);
                 }
                 .img-5{
-                    transform: translateX(-100%);
+                    transform: translate(-100%,100%);
                 }   
                 .effect-6{
                     transform: translateX(0%);
