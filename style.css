@@ -562,7 +562,7 @@ aside{
         gap: 3rem;
 
         .services-box{
-            flex: 1 1 22rem;
+            flex: 1 1 20rem;
             background-color: var(--second-color);
             padding: 3rem 2rem 4rem;
             border-radius: 2rem;
@@ -636,7 +636,8 @@ aside{
         
         }
         .services-box1{
-            flex: 1 1 22rem;
+            flex: 1 1 18rem ;
+            height: 43vh;
             background-color: var(--second-color);
             position: relative;
             align-items: center;
@@ -649,6 +650,8 @@ aside{
             overflow: hidden;
             padding:1rem 1rem ;
             transition: all 0.2s linear;
+
+            
 
             i{
                 font-size: 5rem;
@@ -722,6 +725,7 @@ aside{
         filter: hue-rotate(-360deg) saturate(1000%);
     }
 }
+
 
 
 
@@ -959,11 +963,11 @@ aside{
             width: 150px;
         }
     }
+    
 }
 @media screen and (max-width: 980px){
     section{
         padding:4% 2rem;
     }
-    
-   
+  
 }
